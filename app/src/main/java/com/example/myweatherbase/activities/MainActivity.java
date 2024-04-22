@@ -1,6 +1,7 @@
 package com.example.myweatherbase.activities;
 
 import android.os.Bundle;
+import android.view.View;
 import android.widget.ImageView;
 import android.widget.TextView;
 
@@ -14,6 +15,7 @@ import com.example.myweatherbase.base.BaseActivity;
 import com.example.myweatherbase.base.CallInterface;
 import com.example.myweatherbase.base.ImageDownloader;
 import com.example.myweatherbase.base.Parameters;
+import com.google.android.material.floatingactionbutton.FloatingActionButton;
 
 import java.text.SimpleDateFormat;
 import java.util.Date;
@@ -23,6 +25,7 @@ public class MainActivity extends BaseActivity implements CallInterface {
 
     private Root root;
     private RecyclerView recyclerView;
+    private FloatingActionButton floatingActionButton;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -46,9 +49,12 @@ public class MainActivity extends BaseActivity implements CallInterface {
         hideProgress();
 
         recyclerView = findViewById(R.id.recycler);
+        floatingActionButton = findViewById(R.id.floatingActionButtonReturn);
 
         recyclerView.setAdapter(new AdaptadorRecycler(this, root));
         LinearLayoutManager linearLayoutManager = new LinearLayoutManager(this);
         recyclerView.setLayoutManager(linearLayoutManager);
+
+        floatingActionButton.setOnClickListener(view -> finish());
     }
 }
