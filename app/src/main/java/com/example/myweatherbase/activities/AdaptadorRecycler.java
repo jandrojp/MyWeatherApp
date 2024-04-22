@@ -5,12 +5,19 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
+import android.widget.TextView;
+
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 import com.example.myweatherbase.R;
 import com.example.myweatherbase.activities.model.Root;
 import com.example.myweatherbase.base.ImageDownloader;
 import com.example.myweatherbase.base.Parameters;
+
+import org.w3c.dom.Text;
+
+import java.text.SimpleDateFormat;
+import java.util.Date;
 
 public class AdaptadorRecycler extends RecyclerView.Adapter<AdaptadorRecycler.ViewHolder> {
 
@@ -34,7 +41,19 @@ public class AdaptadorRecycler extends RecyclerView.Adapter<AdaptadorRecycler.Vi
 
     @Override
     public void onBindViewHolder(@NonNull ViewHolder viewHolder, int position) {
+        Date date = new Date((long)root.list.get(position).dt*1000);
+        SimpleDateFormat dateDayOfWeek = new SimpleDateFormat("EEEE");
+        SimpleDateFormat dateDay = new SimpleDateFormat("dd/MM/yyyy");
+        SimpleDateFormat dateHour = new SimpleDateFormat("HH:mm");
+
         ImageDownloader.downloadImage(Parameters.ICON_URL_PRE + root.list.get(position).weather.get(0).icon + Parameters.ICON_URL_POST, viewHolder.imagenTiempo);
+        viewHolder.diaSemana.setText(dateDayOfWeek.format(date).toUpperCase());
+        viewHolder.descripcion.setText(root.list.get(position).weather.get(0).description);
+        viewHolder.temperatura.setText(root.list.get(position).main.temp + "º");
+        viewHolder.fecha.setText(dateDay.format(date));
+        viewHolder.hora.setText(dateHour.format(date));
+        viewHolder.temperaturaMaxima.setText(root.list.get(position).main.temp_max + "º");
+        viewHolder.temperaturaMinima.setText(root.list.get(position).main.temp_min + "º");
     }
 
     @Override
@@ -49,10 +68,25 @@ public class AdaptadorRecycler extends RecyclerView.Adapter<AdaptadorRecycler.Vi
     public class ViewHolder extends RecyclerView.ViewHolder {
 
         private ImageView imagenTiempo;
+        private TextView diaSemana;
+        private TextView descripcion;
+        private TextView temperatura;
+        private TextView fecha;
+        private TextView hora;
+        private TextView temperaturaMaxima;
+        private TextView temperaturaMinima;
 
         public ViewHolder(@NonNull View itemView) {
             super(itemView);
+
             imagenTiempo = itemView.findViewById(R.id.imageWeather);
+            diaSemana = itemView.findViewById(R.id.diaSemana);
+            descripcion = itemView.findViewById(R.id.descripcion);
+            temperatura = itemView.findViewById(R.id.temperatura);
+            fecha = itemView.findViewById(R.id.fecha);
+            hora = itemView.findViewById(R.id.hora);
+            temperaturaMaxima = itemView.findViewById(R.id.temperaturaMaxima);
+            temperaturaMinima = itemView.findViewById(R.id.temperaturaMinima);
         }
     }
 

@@ -50,14 +50,5 @@ public class MainActivity extends BaseActivity implements CallInterface {
         recyclerView.setAdapter(new AdaptadorRecycler(this, root));
         LinearLayoutManager linearLayoutManager = new LinearLayoutManager(this);
         recyclerView.setLayoutManager(linearLayoutManager);
-
-
-        //txtView.setText(root.list.get(0).weather.get(0).description);
-        //ImageDownloader.downloadImage(Parameters.ICON_URL_PRE + root.list.get(0).weather.get(0).icon + Parameters.ICON_URL_POST, imageView);
-        //Date date = new Date((long)root.list.get(0).dt*1000);
-        //SimpleDateFormat dateDayOfWeek = new SimpleDateFormat("E");
-        //SimpleDateFormat dateDay = new SimpleDateFormat("EEE, d MMM yyyy HH:mm");
-        //textViewDayOfWeek.setText(dateDayOfWeek.format(date));
-        //textViewDay.setText(dateDay.format(date));
     }
 }
