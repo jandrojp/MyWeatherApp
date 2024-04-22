@@ -34,10 +34,16 @@ public class InitialActivity extends AppCompatActivity {
                     imagenCiudades.setImageResource(R.drawable.fondo_valencia);
 
                 } else if (adapterView.getSelectedItem().equals(Ciudad.MADRID)) {
-                    imagenCiudades.setImageResource(R.drawable.fondo_valencia);
+                    imagenCiudades.setImageResource(R.drawable.fondo_madrid);
 
                 } else if (adapterView.getSelectedItem().equals(Ciudad.BARCELONA)) {
-                    imagenCiudades.setImageResource(R.drawable.fondo_valencia);
+                    imagenCiudades.setImageResource(R.drawable.fondo_barcelona);
+
+                } else if (adapterView.getSelectedItem().equals(Ciudad.SEVILLA)) {
+                    imagenCiudades.setImageResource(R.drawable.fondo_sevilla);
+
+                } else if (adapterView.getSelectedItem().equals(Ciudad.BILBAO)) {
+                    imagenCiudades.setImageResource(R.drawable.fondo_bilbao);
                 }
             }
 

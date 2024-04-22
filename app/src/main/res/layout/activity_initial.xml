@@ -19,16 +19,16 @@
         android:id="@+id/textView"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="32dp"
+        android:layout_marginTop="56dp"
         android:text="Elige una ciudad"
-        android:textSize="20sp"
+        android:textSize="16sp"
         app:layout_constraintEnd_toEndOf="@+id/imageCiudad"
         app:layout_constraintStart_toStartOf="@+id/imageCiudad"
         app:layout_constraintTop_toBottomOf="@+id/imageCiudad" />
 
     <Spinner
         android:id="@+id/spinnerCiudades"
-        android:layout_width="240dp"
+        android:layout_width="216dp"
         android:layout_height="48dp"
         android:layout_marginTop="16dp"
         app:layout_constraintEnd_toEndOf="@+id/imageCiudad"
@@ -38,12 +38,12 @@
 
     <Button
         android:id="@+id/buttonPrevision"
-        android:layout_width="wrap_content"
+        android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:layout_marginTop="32dp"
+        android:layout_marginTop="24dp"
+        android:backgroundTint="#009688"
         android:text="PREVISION"
-        app:layout_constraintEnd_toEndOf="@+id/imageCiudad"
-        app:layout_constraintHorizontal_bias="0.493"
-        app:layout_constraintStart_toStartOf="@+id/imageCiudad"
+        app:layout_constraintEnd_toEndOf="@+id/spinnerCiudades"
+        app:layout_constraintStart_toStartOf="@+id/spinnerCiudades"
         app:layout_constraintTop_toBottomOf="@+id/spinnerCiudades" />
 </androidx.constraintlayout.widget.ConstraintLayout>
