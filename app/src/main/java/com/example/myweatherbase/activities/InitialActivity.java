@@ -15,6 +15,9 @@ public class InitialActivity extends AppCompatActivity {
     private ImageView imagenCiudades;
     private Spinner spinnerCiudades;
     private Button buttonPrevision;
+    private String nombreCiudad;
+    private double latitud;
+    private double longitud;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -45,6 +48,11 @@ public class InitialActivity extends AppCompatActivity {
                 } else if (adapterView.getSelectedItem().equals(Ciudad.BILBAO)) {
                     imagenCiudades.setImageResource(R.drawable.fondo_bilbao);
                 }
+
+                Ciudad ciudad = (Ciudad) adapterView.getSelectedItem();
+                nombreCiudad = ciudad.getNombre();
+                latitud = ciudad.getLatitud();
+                longitud = ciudad.getLongitud();
             }
 
             @Override
@@ -55,6 +63,9 @@ public class InitialActivity extends AppCompatActivity {
 
         buttonPrevision.setOnClickListener(view -> {
             Intent intent = new Intent(this, MainActivity.class);
+            intent.putExtra("nombreCiudad", nombreCiudad);
+            intent.putExtra("latitud", latitud);
+            intent.putExtra("longitud", longitud);
             startActivity(intent);
         });
     }

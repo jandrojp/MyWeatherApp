@@ -1,10 +1,12 @@
 package com.example.myweatherbase.activities;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.ImageView;
 import android.widget.TextView;
 
+import androidx.recyclerview.widget.DividerItemDecoration;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
@@ -26,6 +28,7 @@ public class MainActivity extends BaseActivity implements CallInterface {
     private Root root;
     private RecyclerView recyclerView;
     private FloatingActionButton floatingActionButton;
+    private TextView nombreCiudad;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -40,7 +43,8 @@ public class MainActivity extends BaseActivity implements CallInterface {
     // Realizamos la llamada y recogemos los datos en un objeto Root
     @Override
     public void doInBackground() {
-        root = Connector.getConector().get(Root.class,"&lat=39.4078888&lon=-0.4439123");
+        Bundle extras = getIntent().getExtras();
+        root = Connector.getConector().get(Root.class,"&lat=" + extras.getDouble("latitud") + "&lon=" + extras.getDouble("longitud"));
     }
 
     // Una vez ya se ha realizado la llamada, ocultamos la barra de progreso y presentamos los datos
@@ -50,11 +54,16 @@ public class MainActivity extends BaseActivity implements CallInterface {
 
         recyclerView = findViewById(R.id.recycler);
         floatingActionButton = findViewById(R.id.floatingActionButtonReturn);
+        nombreCiudad = findViewById(R.id.nombreCiudad);
 
         recyclerView.setAdapter(new AdaptadorRecycler(this, root));
+        recyclerView.addItemDecoration(new DividerItemDecoration(this, RecyclerView.VERTICAL));
         LinearLayoutManager linearLayoutManager = new LinearLayoutManager(this);
         recyclerView.setLayoutManager(linearLayoutManager);
 
         floatingActionButton.setOnClickListener(view -> finish());
+
+        Bundle extras = getIntent().getExtras();
+        nombreCiudad.setText(extras.getString("nombreCiudad").toString());
     }
 }

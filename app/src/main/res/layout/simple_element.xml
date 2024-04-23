@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
-    android:background="#FFE8A1">
+    android:background="#FFEBAC">
 
     <ImageView
         android:id="@+id/imageWeather"
