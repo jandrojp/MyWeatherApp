@@ -1,6 +1,7 @@
 package com.example.myweatherbase.activities;
 
 import android.content.Context;
+import android.content.Intent;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -54,6 +55,11 @@ public class AdaptadorRecycler extends RecyclerView.Adapter<AdaptadorRecycler.Vi
         viewHolder.hora.setText(dateHour.format(date));
         viewHolder.temperaturaMaxima.setText(root.list.get(position).main.temp_max + "º");
         viewHolder.temperaturaMinima.setText(root.list.get(position).main.temp_min + "º");
+
+        viewHolder.itemView.setOnClickListener(view -> {
+            Intent intent = new Intent(view.getContext(), DetailsActivity.class);
+            view.getContext().startActivity(intent);
+        });
     }
 
     @Override

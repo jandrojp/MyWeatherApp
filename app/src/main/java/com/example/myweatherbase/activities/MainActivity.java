@@ -3,7 +3,6 @@ package com.example.myweatherbase.activities;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
-import android.widget.ImageView;
 import android.widget.TextView;
 
 import androidx.recyclerview.widget.DividerItemDecoration;
@@ -15,12 +14,7 @@ import com.example.myweatherbase.R;
 import com.example.myweatherbase.activities.model.Root;
 import com.example.myweatherbase.base.BaseActivity;
 import com.example.myweatherbase.base.CallInterface;
-import com.example.myweatherbase.base.ImageDownloader;
-import com.example.myweatherbase.base.Parameters;
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
-
-import java.text.SimpleDateFormat;
-import java.util.Date;
 
 public class MainActivity extends BaseActivity implements CallInterface {
 
@@ -61,9 +55,13 @@ public class MainActivity extends BaseActivity implements CallInterface {
         LinearLayoutManager linearLayoutManager = new LinearLayoutManager(this);
         recyclerView.setLayoutManager(linearLayoutManager);
 
+
+
         floatingActionButton.setOnClickListener(view -> finish());
 
         Bundle extras = getIntent().getExtras();
         nombreCiudad.setText(extras.getString("nombreCiudad").toString());
     }
+
+
 }
