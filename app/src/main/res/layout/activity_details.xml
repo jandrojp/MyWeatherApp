@@ -3,15 +3,76 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="match_parent">
+    android:layout_height="match_parent"
+    android:background="#FFFFFF">
+
+    <TextView
+        android:id="@+id/textViewUpdated"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="80dp"
+        android:text="Updated just now"
+        android:textColor="#000000"
+        android:textSize="14sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/grados"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:text="grados"
+        android:textColor="#000000"
+        android:textSize="88sp"
+        android:textStyle="normal"
+        app:layout_constraintEnd_toEndOf="@+id/textViewUpdated"
+        app:layout_constraintStart_toStartOf="@+id/textViewUpdated"
+        app:layout_constraintTop_toBottomOf="@+id/textViewUpdated" />
 
     <ImageView
         android:id="@+id/clima"
-        android:layout_width="240dp"
-        android:layout_height="240dp"
-        android:layout_marginTop="120dp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
+        android:layout_width="40dp"
+        android:layout_height="40dp"
+        app:layout_constraintStart_toStartOf="@+id/grados"
+        app:layout_constraintTop_toBottomOf="@+id/textViewFeel"
         app:srcCompat="@drawable/ic_launcher_background" />
+
+    <TextView
+        android:id="@+id/textViewFeel"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:layout_marginEnd="48dp"
+        android:text="Feels like "
+        android:textColor="#000000"
+        app:layout_constraintEnd_toEndOf="@+id/textViewUpdated"
+        app:layout_constraintStart_toStartOf="@+id/textViewUpdated"
+        app:layout_constraintTop_toBottomOf="@+id/grados" />
+
+    <TextView
+        android:id="@+id/sensacionTermica"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="48dp"
+        android:layout_marginTop="8dp"
+        android:text="TextView"
+        android:textColor="#000000"
+        app:layout_constraintEnd_toEndOf="@+id/textViewUpdated"
+        app:layout_constraintStart_toStartOf="@+id/textViewUpdated"
+        app:layout_constraintTop_toBottomOf="@+id/grados" />
+
+    <com.google.android.material.floatingactionbutton.FloatingActionButton
+        android:id="@+id/buttonReturn"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="16dp"
+        android:layout_marginBottom="16dp"
+        android:clickable="true"
+        app:backgroundTint="#FDC66A"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:srcCompat="@android:drawable/ic_menu_revert" />
+
 </androidx.constraintlayout.widget.ConstraintLayout>

@@ -50,14 +50,18 @@ public class AdaptadorRecycler extends RecyclerView.Adapter<AdaptadorRecycler.Vi
         ImageDownloader.downloadImage(Parameters.ICON_URL_PRE + root.list.get(position).weather.get(0).icon + Parameters.ICON_URL_POST, viewHolder.imagenTiempo);
         viewHolder.diaSemana.setText(dateDayOfWeek.format(date).toUpperCase());
         viewHolder.descripcion.setText(root.list.get(position).weather.get(0).description);
-        viewHolder.temperatura.setText(root.list.get(position).main.temp + "º");
+        viewHolder.temperatura.setText((int)root.list.get(position).main.temp + "º");
         viewHolder.fecha.setText(dateDay.format(date));
         viewHolder.hora.setText(dateHour.format(date));
-        viewHolder.temperaturaMaxima.setText(root.list.get(position).main.temp_max + "º");
-        viewHolder.temperaturaMinima.setText(root.list.get(position).main.temp_min + "º");
+        viewHolder.temperaturaMaxima.setText((int)root.list.get(position).main.temp_max + "º");
+        viewHolder.temperaturaMinima.setText((int)root.list.get(position).main.temp_min + "º");
 
         viewHolder.itemView.setOnClickListener(view -> {
             Intent intent = new Intent(view.getContext(), DetailsActivity.class);
+            intent.putExtra("root", root);
+            intent.putExtra("position", position);
+
+
             view.getContext().startActivity(intent);
         });
     }

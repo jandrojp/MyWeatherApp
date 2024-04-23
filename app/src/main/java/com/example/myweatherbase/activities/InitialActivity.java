@@ -34,23 +34,23 @@ public class InitialActivity extends AppCompatActivity {
             @Override
             public void onItemSelected(AdapterView<?> adapterView, View view, int i, long l) {
                 if (adapterView.getSelectedItem().equals(Ciudad.VALENCIA)) {
-                    imagenCiudades.setImageResource(R.drawable.fondo_valencia);
+                    imagenCiudades.setImageResource(R.drawable.ciudad_artes);
 
                 } else if (adapterView.getSelectedItem().equals(Ciudad.MADRID)) {
-                    imagenCiudades.setImageResource(R.drawable.fondo_madrid);
+                    imagenCiudades.setImageResource(R.drawable.palacio_real);
 
                 } else if (adapterView.getSelectedItem().equals(Ciudad.BARCELONA)) {
-                    imagenCiudades.setImageResource(R.drawable.fondo_barcelona);
+                    imagenCiudades.setImageResource(R.drawable.sagrada_familia);
 
                 } else if (adapterView.getSelectedItem().equals(Ciudad.SEVILLA)) {
-                    imagenCiudades.setImageResource(R.drawable.fondo_sevilla);
+                    imagenCiudades.setImageResource(R.drawable.giralda);
 
                 } else if (adapterView.getSelectedItem().equals(Ciudad.BILBAO)) {
-                    imagenCiudades.setImageResource(R.drawable.fondo_bilbao);
+                    imagenCiudades.setImageResource(R.drawable.museo_guggenheim);
                 }
 
                 Ciudad ciudad = (Ciudad) adapterView.getSelectedItem();
-                nombreCiudad = ciudad.getNombre();
+                nombreCiudad = ciudad.name();
                 latitud = ciudad.getLatitud();
                 longitud = ciudad.getLongitud();
             }

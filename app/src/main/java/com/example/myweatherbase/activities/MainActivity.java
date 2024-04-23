@@ -1,8 +1,6 @@
 package com.example.myweatherbase.activities;
 
-import android.content.Intent;
 import android.os.Bundle;
-import android.view.View;
 import android.widget.TextView;
 
 import androidx.recyclerview.widget.DividerItemDecoration;
@@ -47,7 +45,7 @@ public class MainActivity extends BaseActivity implements CallInterface {
         hideProgress();
 
         recyclerView = findViewById(R.id.recycler);
-        floatingActionButton = findViewById(R.id.floatingActionButtonReturn);
+        floatingActionButton = findViewById(R.id.buttonReturn);
         nombreCiudad = findViewById(R.id.nombreCiudad);
 
         recyclerView.setAdapter(new AdaptadorRecycler(this, root));
