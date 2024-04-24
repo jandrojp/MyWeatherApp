@@ -1,6 +1,7 @@
 package com.example.myweatherbase.activities;
 
 import android.os.Bundle;
+import android.view.Menu;
 import android.widget.TextView;
 
 import androidx.recyclerview.widget.DividerItemDecoration;
@@ -10,6 +11,7 @@ import androidx.recyclerview.widget.RecyclerView;
 import com.example.myweatherbase.API.Connector;
 import com.example.myweatherbase.R;
 import com.example.myweatherbase.activities.model.Root;
+import com.example.myweatherbase.activities.preferencias.ThemeSetup;
 import com.example.myweatherbase.base.BaseActivity;
 import com.example.myweatherbase.base.CallInterface;
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
@@ -27,9 +29,17 @@ public class MainActivity extends BaseActivity implements CallInterface {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
+        ThemeSetup.applyPreferenceTheme(getApplicationContext());
+
         // Mostramos la barra de progreso y ejecutamos la llamada a la API
         showProgress();
         executeCall(this);
+    }
+
+    @Override
+    public boolean onCreateOptionsMenu(Menu menu) {
+        getMenuInflater().inflate(R.menu.menu, menu);
+        return super.onCreateOptionsMenu(menu);
     }
 
     // Realizamos la llamada y recogemos los datos en un objeto Root
