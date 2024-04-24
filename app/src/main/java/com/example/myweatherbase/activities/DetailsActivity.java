@@ -21,10 +21,9 @@ public class DetailsActivity extends AppCompatActivity {
     private TextView temperaturaMinima;
     private TextView temperaturaMaxima;
     private TextView humedad;
-    private TextView probLluvia;
     private TextView presion;
     private TextView velViento;
-    private TextView visibilidad;
+    private TextView rafagas;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -39,10 +38,9 @@ public class DetailsActivity extends AppCompatActivity {
         temperaturaMinima = findViewById(R.id.tempMinima);
         temperaturaMaxima = findViewById(R.id.tempMaxima);
         humedad = findViewById(R.id.humedad);
-        probLluvia = findViewById(R.id.probLluvia);
         presion = findViewById(R.id.presion);
         velViento = findViewById(R.id.velViento);
-        visibilidad = findViewById(R.id.visibilidad);
+        rafagas = findViewById(R.id.rafagas);
 
 
         Root root = (Root) getIntent().getExtras().get("root");
@@ -55,10 +53,9 @@ public class DetailsActivity extends AppCompatActivity {
         temperaturaMinima.setText((int)root.list.get(position).main.temp_min + "º");
         temperaturaMaxima.setText((int)root.list.get(position).main.temp_max + "º");
         humedad.setText(root.list.get(position).main.humidity + "%");
-        probLluvia.setText(root.list.get(position).rain + "%");
-        presion.setText(root.list.get(position).main.pressure + " mB");
+        presion.setText(root.list.get(position).main.pressure + " hPa");
         velViento.setText((int)root.list.get(position).wind.speed + " km/h");
-        visibilidad.setText(root.list.get(position).visibility + "m");
+        rafagas.setText((int)root.list.get(position).wind.gust + " km/h");
 
         buttonReturn.setOnClickListener(view -> finish());
     }

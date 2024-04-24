@@ -12,7 +12,6 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="32dp"
         android:text="Actualizado hace un momento"
-        android:textColor="#000000"
         android:textSize="14sp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
@@ -22,7 +21,7 @@
         android:id="@+id/grados"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="48dp"
+        android:layout_marginTop="54dp"
         android:text="grados"
         android:textColor="#000000"
         android:textSize="88sp"
@@ -116,30 +115,33 @@
         app:layout_constraintTop_toBottomOf="@+id/clima" />
 
     <TextView
+        android:id="@+id/textView3"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:text="_______________________________________________"
+        android:textAlignment="center"
+        app:layout_constraintBottom_toTopOf="@+id/textViewHumedad"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tempMinima" />
+
+    <TextView
         android:id="@+id/textViewHumedad"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="72dp"
-        android:layout_marginTop="48dp"
+        android:layout_marginTop="72dp"
         android:text="Humedad"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/textViewMi" />
-
-    <TextView
-        android:id="@+id/textViewLluvia"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Probabilidad de lluvia"
-        app:layout_constraintStart_toStartOf="@+id/textViewHumedad"
-        app:layout_constraintTop_toBottomOf="@+id/textViewHumedad" />
 
     <TextView
         android:id="@+id/textViewPresion"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="Presión"
-        app:layout_constraintStart_toStartOf="@+id/textViewLluvia"
-        app:layout_constraintTop_toBottomOf="@+id/textViewLluvia" />
+        app:layout_constraintStart_toStartOf="@+id/textViewHumedad"
+        app:layout_constraintTop_toBottomOf="@+id/textViewHumedad" />
 
     <TextView
         android:id="@+id/textViewViento"
@@ -150,12 +152,45 @@
         app:layout_constraintTop_toBottomOf="@+id/textViewPresion" />
 
     <TextView
-        android:id="@+id/textViewVisibilidad"
+        android:id="@+id/textViewRafagas"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Visibilidad"
+        android:text="Ráfagas"
         app:layout_constraintStart_toStartOf="@+id/textViewViento"
         app:layout_constraintTop_toBottomOf="@+id/textViewViento" />
+
+    <TextView
+        android:id="@+id/humedad"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="72dp"
+        android:text="TextView"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/textViewHumedad" />
+
+    <TextView
+        android:id="@+id/presion"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="TextView"
+        app:layout_constraintEnd_toEndOf="@+id/humedad"
+        app:layout_constraintTop_toBottomOf="@+id/humedad" />
+
+    <TextView
+        android:id="@+id/velViento"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="TextView"
+        app:layout_constraintEnd_toEndOf="@+id/presion"
+        app:layout_constraintTop_toBottomOf="@+id/presion" />
+
+    <TextView
+        android:id="@+id/rafagas"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="TextView"
+        app:layout_constraintEnd_toEndOf="@+id/velViento"
+        app:layout_constraintTop_toBottomOf="@+id/velViento" />
 
     <com.google.android.material.floatingactionbutton.FloatingActionButton
         android:id="@+id/buttonReturn"
@@ -168,46 +203,5 @@
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:srcCompat="@android:drawable/ic_menu_revert" />
-
-    <TextView
-        android:id="@+id/humedad"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginEnd="72dp"
-        android:text="TextView"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toTopOf="@+id/textViewHumedad" />
-
-    <TextView
-        android:id="@+id/probLluvia"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="TextView"
-        app:layout_constraintEnd_toEndOf="@+id/humedad"
-        app:layout_constraintTop_toBottomOf="@+id/humedad" />
-
-    <TextView
-        android:id="@+id/presion"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="TextView"
-        app:layout_constraintEnd_toEndOf="@+id/probLluvia"
-        app:layout_constraintTop_toBottomOf="@+id/probLluvia" />
-
-    <TextView
-        android:id="@+id/velViento"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="TextView"
-        app:layout_constraintEnd_toEndOf="@+id/presion"
-        app:layout_constraintTop_toBottomOf="@+id/presion" />
-
-    <TextView
-        android:id="@+id/visibilidad"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="TextView"
-        app:layout_constraintEnd_toEndOf="@+id/velViento"
-        app:layout_constraintTop_toBottomOf="@+id/velViento" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
