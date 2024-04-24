@@ -1,0 +1,192 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#FFFFFF">
+
+    <TextView
+        android:id="@+id/textViewUpdated"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="32dp"
+        android:text="Actualizado hace un momento"
+        android:textSize="14sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/grados"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="120dp"
+        android:layout_marginTop="24dp"
+        android:text="grados"
+        android:textColor="#000000"
+        android:textSize="80sp"
+        android:textStyle="normal"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textViewUpdated" />
+
+    <TextView
+        android:id="@+id/textViewFeel"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:layout_marginEnd="4dp"
+        android:text="Sensación térmica"
+        android:textColor="#000000"
+        app:layout_constraintEnd_toStartOf="@+id/sensacionTermica"
+        app:layout_constraintTop_toBottomOf="@+id/grados" />
+
+    <TextView
+        android:id="@+id/sensacionTermica"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:text="TextView"
+        android:textColor="#000000"
+        app:layout_constraintEnd_toEndOf="@+id/grados"
+        app:layout_constraintTop_toBottomOf="@+id/grados" />
+
+    <ImageView
+        android:id="@+id/clima"
+        android:layout_width="56dp"
+        android:layout_height="56dp"
+        app:layout_constraintEnd_toStartOf="@+id/descripcionTiempo"
+        app:layout_constraintTop_toBottomOf="@+id/textViewFeel"
+        app:srcCompat="@drawable/ic_launcher_background" />
+
+    <TextView
+        android:id="@+id/descripcionTiempo"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="descr"
+        android:textColor="#000000"
+        android:textSize="16sp"
+        app:layout_constraintBottom_toBottomOf="@+id/clima"
+        app:layout_constraintEnd_toEndOf="@+id/sensacionTermica"
+        app:layout_constraintTop_toTopOf="@+id/clima" />
+
+    <TextView
+        android:id="@+id/textViewMi"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="4dp"
+        android:text="Min:"
+        android:textColor="#000000"
+        android:textColorLink="#000000"
+        app:layout_constraintEnd_toStartOf="@+id/tempMinima"
+        app:layout_constraintTop_toBottomOf="@+id/clima" />
+
+    <TextView
+        android:id="@+id/tempMinima"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="tmin"
+        android:textColor="#000000"
+        app:layout_constraintEnd_toStartOf="@+id/textViewMa"
+        app:layout_constraintTop_toBottomOf="@+id/clima" />
+
+    <TextView
+        android:id="@+id/textViewMa"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="4dp"
+        android:text=" | Max:"
+        android:textColor="#000000"
+        app:layout_constraintEnd_toStartOf="@+id/tempMaxima"
+        app:layout_constraintTop_toBottomOf="@+id/clima" />
+
+    <TextView
+        android:id="@+id/tempMaxima"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="tmax"
+        android:textColor="#000000"
+        app:layout_constraintEnd_toEndOf="@+id/descripcionTiempo"
+        app:layout_constraintTop_toBottomOf="@+id/clima" />
+
+    <TextView
+        android:id="@+id/textViewHumedad"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="96dp"
+        android:layout_marginBottom="32dp"
+        android:text="Humedad"
+        app:layout_constraintBottom_toBottomOf="@+id/tempMaxima"
+        app:layout_constraintStart_toEndOf="@+id/grados"
+        app:layout_constraintTop_toTopOf="@+id/grados" />
+
+    <TextView
+        android:id="@+id/textViewPresion"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Presión"
+        app:layout_constraintStart_toStartOf="@+id/textViewHumedad"
+        app:layout_constraintTop_toBottomOf="@+id/textViewHumedad" />
+
+    <TextView
+        android:id="@+id/textViewViento"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Velocidad del viento"
+        app:layout_constraintStart_toStartOf="@+id/textViewPresion"
+        app:layout_constraintTop_toBottomOf="@+id/textViewPresion" />
+
+    <TextView
+        android:id="@+id/textViewRafagas"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Ráfagas"
+        app:layout_constraintStart_toStartOf="@+id/textViewViento"
+        app:layout_constraintTop_toBottomOf="@+id/textViewViento" />
+
+    <TextView
+        android:id="@+id/humedad"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="136dp"
+        android:text="TextView"
+        app:layout_constraintStart_toEndOf="@+id/textViewHumedad"
+        app:layout_constraintTop_toTopOf="@+id/textViewHumedad" />
+
+    <TextView
+        android:id="@+id/presion"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="TextView"
+        app:layout_constraintEnd_toEndOf="@+id/humedad"
+        app:layout_constraintTop_toBottomOf="@+id/humedad" />
+
+    <TextView
+        android:id="@+id/velViento"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="TextView"
+        app:layout_constraintEnd_toEndOf="@+id/presion"
+        app:layout_constraintTop_toBottomOf="@+id/presion" />
+
+    <TextView
+        android:id="@+id/rafagas"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="TextView"
+        app:layout_constraintEnd_toEndOf="@+id/velViento"
+        app:layout_constraintTop_toBottomOf="@+id/velViento" />
+
+    <com.google.android.material.floatingactionbutton.FloatingActionButton
+        android:id="@+id/buttonReturn"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="16dp"
+        android:layout_marginBottom="16dp"
+        android:clickable="true"
+        app:backgroundTint="#FDC66A"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:srcCompat="@android:drawable/ic_menu_revert" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

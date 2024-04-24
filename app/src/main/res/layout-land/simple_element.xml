@@ -1,6 +1,139 @@
 <?xml version="1.0" encoding="utf-8"?>
 <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="match_parent">
+    android:layout_height="wrap_content"
+    android:background="#FFFFFF">
 
+    <ImageView
+        android:id="@+id/imageWeather"
+        android:layout_width="96dp"
+        android:layout_height="96dp"
+        android:layout_marginStart="24dp"
+        android:layout_marginTop="8dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/ic_launcher_background" />
+
+    <TextView
+        android:id="@+id/diaSemana"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="40dp"
+        android:layout_marginTop="24dp"
+        android:text="TextView"
+        android:textColor="#000000"
+        android:textSize="16sp"
+        android:textStyle="bold"
+        app:layout_constraintStart_toEndOf="@+id/imageWeather"
+        app:layout_constraintTop_toTopOf="@+id/imageWeather" />
+
+    <TextView
+        android:id="@+id/descripcion"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="40dp"
+        android:text="descripcion"
+        android:textColor="#575656"
+        android:textSize="14sp"
+        app:layout_constraintBottom_toBottomOf="@+id/diaSemana"
+        app:layout_constraintStart_toEndOf="@+id/diaSemana"
+        app:layout_constraintTop_toTopOf="@+id/diaSemana" />
+
+    <TextView
+        android:id="@+id/textViewTemp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:text="Temp"
+        android:textColor="#575656"
+        android:textSize="14sp"
+        app:layout_constraintStart_toStartOf="@+id/descripcion"
+        app:layout_constraintTop_toBottomOf="@+id/descripcion" />
+
+    <TextView
+        android:id="@+id/temperatura"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="4dp"
+        android:text="t"
+        android:textColor="#575656"
+        android:textSize="14sp"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toBottomOf="@+id/textViewTemp"
+        app:layout_constraintStart_toEndOf="@+id/textViewTemp"
+        app:layout_constraintTop_toTopOf="@+id/textViewTemp" />
+
+    <TextView
+        android:id="@+id/fecha"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="40dp"
+        android:layout_marginBottom="24dp"
+        android:text="fecha"
+        android:textColor="#575656"
+        android:textSize="14sp"
+        app:layout_constraintBottom_toBottomOf="@+id/imageWeather"
+        app:layout_constraintStart_toEndOf="@+id/imageWeather" />
+
+    <TextView
+        android:id="@+id/hora"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="276dp"
+        android:text="TextView"
+        android:textColor="#000000"
+        android:textSize="16sp"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toBottomOf="@+id/diaSemana"
+        app:layout_constraintStart_toEndOf="@+id/fecha"
+        app:layout_constraintTop_toTopOf="@+id/diaSemana"
+        app:layout_constraintVertical_bias="1.0" />
+
+    <TextView
+        android:id="@+id/textViewMax"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="10dp"
+        android:text="Max"
+        android:textColor="#575656"
+        app:layout_constraintBottom_toBottomOf="@+id/temperatura"
+        app:layout_constraintStart_toEndOf="@+id/temperatura"
+        app:layout_constraintTop_toTopOf="@+id/temperatura" />
+
+    <TextView
+        android:id="@+id/temperaturaMaxima"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="4dp"
+        android:text="max"
+        android:textColor="#FB0505"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toBottomOf="@+id/textViewMax"
+        app:layout_constraintStart_toEndOf="@+id/textViewMax"
+        app:layout_constraintTop_toTopOf="@+id/textViewMax" />
+
+    <TextView
+        android:id="@+id/textViewMin"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="10dp"
+        android:text="Min"
+        android:textColor="#575656"
+        app:layout_constraintBottom_toBottomOf="@+id/temperaturaMaxima"
+        app:layout_constraintStart_toEndOf="@+id/temperaturaMaxima"
+        app:layout_constraintTop_toTopOf="@+id/temperaturaMaxima" />
+
+    <TextView
+        android:id="@+id/temperaturaMinima"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="4dp"
+        android:text="min"
+        android:textColor="#058EFB"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toBottomOf="@+id/textViewMin"
+        app:layout_constraintStart_toEndOf="@+id/textViewMin"
+        app:layout_constraintTop_toTopOf="@+id/textViewMin" />
 </androidx.constraintlayout.widget.ConstraintLayout>
