@@ -20,4 +20,18 @@
         <item>LIGHT</item>
         <item>DARK</item>
     </string-array>
+
+
+
+    <string-array name="idiom_entries">
+        <item>@string/espanyol</item>
+        <item>@string/ingles</item>
+        <item>@string/italiano</item>
+    </string-array>
+
+    <string-array name="idiom_values">
+        <item>espanyol</item>
+        <item>ingles</item>
+        <item>italiano</item>
+    </string-array>
 </resources>

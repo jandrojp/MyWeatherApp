@@ -35,13 +35,24 @@ public class PreferenciasFragment extends PreferenceFragmentCompat {
             return true;
         });
 
-        // EditTextPreference
-        final EditTextPreference editTextPreference = findPreference("editTextPreferenceKey");
-        editTextPreference.setSummary("Actualmente: " + GestionPreferencias.getInstance().getEditTextPreference(getContext()));
-        editTextPreference.setOnPreferenceChangeListener((preference, newValue) -> {
-            editTextPreference.setSummary("Actualmente: " + newValue);
+
+
+        final ListPreference language = findPreference("lenguaje");
+        final List<String> idiom_entries = Arrays.asList(getResources().getStringArray(R.array.idiom_entries));
+        final List<String> idiom_values = Arrays.asList(getResources().getStringArray(R.array.idiom_values));
+
+        int posicion  = idiom_values.indexOf(GestionPreferencias.getInstance().getIdiom(getContext()));
+
+        language.setSummary(idiom_entries.get(posicion));
+        language.setOnPreferenceChangeListener((preference, newValue) -> {
+
+            int pos1 = idiom_values.indexOf(newValue);
+            language.setSummary(idiom_entries.get(pos1));
+
             return true;
         });
+
+        
 
         // Theme preferences with ListPreference
         ListPreference themePreference = getPreferenceManager().findPreference(getString(R.string.settings_theme_key));

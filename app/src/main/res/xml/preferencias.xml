@@ -1,12 +1,23 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.preference.PreferenceScreen xmlns:android="http://schemas.android.com/apk/res/android">
-    <PreferenceCategory android:title="Una categoria">
-        <EditTextPreference
-            android:defaultValue="389"
-            android:inputType="number"
-            android:key="editTextPreferenceKey"
-            android:summary="Ejemplo EditTextPreference"
-            android:title="EditTextPreference" />
+<androidx.preference.PreferenceScreen xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:android="http://schemas.android.com/apk/res/android">
+    <PreferenceCategory android:title="General">
+        <ListPreference
+            android:defaultValue="standard"
+            android:entries="@array/unidades_entries"
+            android:entryValues="@array/unidades_values"
+            android:key="unidades"
+            android:summary="Unidades en"
+            android:title="Unidades" />
+        <ListPreference
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:defaultValue="standard"
+            android:entries="@array/idiom_entries"
+            android:entryValues="@array/idiom_values"
+            android:key="lenguaje"
+            android:summary="Español"
+            android:title="Lenguaje" />
 
         <CheckBoxPreference
             android:defaultValue="false"
@@ -18,14 +29,7 @@
             android:defaultValue="false"
             android:key="switch_preference_1"
             android:title="Switch preference" />
-        <ListPreference
-            android:defaultValue="standard"
-            android:entries="@array/unidades_entries"
-            android:entryValues="@array/unidades_values"
-            android:key="unidades"
-            android:summary="Unidades en"
-            android:title="Unidades" />
-        <PreferenceCategory android:title="Otra categoria">
+        <PreferenceCategory android:title="Pantalla">
             <androidx.preference.ListPreference
                 android:dialogTitle="@string/settings_theme_dialog_title"
                 android:entries="@array/settings_theme_entries"

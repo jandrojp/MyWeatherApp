@@ -1,8 +1,8 @@
 <resources>
     <string name="app_name">MyWeatherBase</string>
     <string name="settings_theme_key">Theme</string>
-    <string name="standard">Standard</string>
-    <string name="metric">Metric</string>
+    <string name="standard">Estándar</string>
+    <string name="metric">Métrica</string>
     <string name="imperial">Imperial</string>
     <string name="spanish">Español</string>
     <string name="english">English</string>
@@ -14,4 +14,9 @@
     <string name="light">Light</string>
     <string name="dark">Dark</string>
     <string name="exit">Exit</string>
+
+
+    <string name="espanyol">Español</string>
+    <string name="ingles">Inglés</string>
+    <string name="italiano">Italiano</string>
 </resources>

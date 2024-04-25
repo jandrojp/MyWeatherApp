@@ -33,6 +33,11 @@ public class GestionPreferencias {
         return pref.getString("unidades","standard");
     }
 
+    public String getIdiom(Context context){
+        inicializa(context);
+        return pref.getString("lenguaje","espanyol");
+    }
+
     public String getEditTextPreference(Context context){
         inicializa(context);
         return pref.getString("editTextPreferenceKey","389");
