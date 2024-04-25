@@ -12,6 +12,7 @@ import android.widget.Spinner;
 
 import androidx.appcompat.app.AppCompatActivity;
 import com.example.myweatherbase.R;
+import com.example.myweatherbase.activities.preferencias.IdiomSetUp;
 import com.example.myweatherbase.activities.preferencias.PreferenciasActivity;
 import com.example.myweatherbase.activities.preferencias.ThemeSetup;
 
@@ -29,6 +30,7 @@ public class InitialActivity extends AppCompatActivity {
         setContentView(R.layout.activity_initial);
 
         ThemeSetup.applyPreferenceTheme(getApplicationContext());
+        IdiomSetUp.applyPreferenceIdiom(getApplicationContext());
 
         imagenCiudades = findViewById(R.id.imageCiudad);
         spinnerCiudades = findViewById(R.id.spinnerCiudades);

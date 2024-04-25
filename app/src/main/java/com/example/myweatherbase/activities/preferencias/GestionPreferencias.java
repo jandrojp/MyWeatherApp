@@ -35,18 +35,9 @@ public class GestionPreferencias {
 
     public String getIdiom(Context context){
         inicializa(context);
-        return pref.getString("lenguaje","espanyol");
+        return pref.getString(context.getString(R.string.settings_idiom_key),IdiomSetUp.Idiom.ESPANYOL.name());
     }
 
-    public String getEditTextPreference(Context context){
-        inicializa(context);
-        return pref.getString("editTextPreferenceKey","389");
-    }
-
-    public boolean getCheckBoxPreference(Context context){
-        inicializa(context);
-        return pref.getBoolean("checkBoxPreferenceKey",false);
-    }
     public String getTheme(Context context){
         inicializa(context);
         return pref.getString(context.getString(R.string.settings_theme_key),ThemeSetup.Mode.DEFAULT.name());

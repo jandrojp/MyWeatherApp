@@ -11,6 +11,7 @@ import androidx.recyclerview.widget.RecyclerView;
 import com.example.myweatherbase.API.Connector;
 import com.example.myweatherbase.R;
 import com.example.myweatherbase.activities.model.Root;
+import com.example.myweatherbase.activities.preferencias.IdiomSetUp;
 import com.example.myweatherbase.activities.preferencias.ThemeSetup;
 import com.example.myweatherbase.base.BaseActivity;
 import com.example.myweatherbase.base.CallInterface;
@@ -30,6 +31,7 @@ public class MainActivity extends BaseActivity implements CallInterface {
         setContentView(R.layout.activity_main);
 
         ThemeSetup.applyPreferenceTheme(getApplicationContext());
+        IdiomSetUp.applyPreferenceIdiom(getApplicationContext());
 
         // Mostramos la barra de progreso y ejecutamos la llamada a la API
         showProgress();

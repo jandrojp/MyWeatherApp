@@ -1,15 +1,12 @@
 package com.example.myweatherbase.activities.preferencias;
 
 import android.os.Bundle;
-
-import androidx.preference.EditTextPreference;
 import androidx.preference.ListPreference;
 import androidx.preference.PreferenceFragmentCompat;
-
 import com.example.myweatherbase.R;
-
 import java.util.Arrays;
 import java.util.List;
+
 
 public class PreferenciasFragment extends PreferenceFragmentCompat {
 
@@ -37,22 +34,16 @@ public class PreferenciasFragment extends PreferenceFragmentCompat {
 
 
 
-        final ListPreference language = findPreference("lenguaje");
-        final List<String> idiom_entries = Arrays.asList(getResources().getStringArray(R.array.idiom_entries));
-        final List<String> idiom_values = Arrays.asList(getResources().getStringArray(R.array.idiom_values));
-
-        int posicion  = idiom_values.indexOf(GestionPreferencias.getInstance().getIdiom(getContext()));
-
-        language.setSummary(idiom_entries.get(posicion));
-        language.setOnPreferenceChangeListener((preference, newValue) -> {
-
-            int pos1 = idiom_values.indexOf(newValue);
-            language.setSummary(idiom_entries.get(pos1));
-
+        ListPreference idiomPreference = getPreferenceManager().findPreference(getString(R.string.settings_idiom_key));
+        if (idiomPreference.getValue() == null) {
+            idiomPreference.setValue(IdiomSetUp.Idiom.ESPANYOL.name());
+        }
+        idiomPreference.setOnPreferenceChangeListener(((preference, newValue) -> {
+            IdiomSetUp.applyIdiom(IdiomSetUp.Idiom.valueOf((String) newValue));
             return true;
-        });
+        }));
 
-        
+
 
         // Theme preferences with ListPreference
         ListPreference themePreference = getPreferenceManager().findPreference(getString(R.string.settings_theme_key));

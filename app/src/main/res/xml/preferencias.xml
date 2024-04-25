@@ -10,9 +10,7 @@
             android:summary="Unidades en"
             android:title="Unidades" />
         <ListPreference
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:defaultValue="standard"
+            android:defaultValue="espanyol"
             android:entries="@array/idiom_entries"
             android:entryValues="@array/idiom_values"
             android:key="lenguaje"

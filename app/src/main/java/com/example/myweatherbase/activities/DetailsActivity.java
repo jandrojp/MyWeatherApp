@@ -8,6 +8,7 @@ import android.widget.TextView;
 import androidx.appcompat.app.AppCompatActivity;
 import com.example.myweatherbase.R;
 import com.example.myweatherbase.activities.model.Root;
+import com.example.myweatherbase.activities.preferencias.IdiomSetUp;
 import com.example.myweatherbase.activities.preferencias.ThemeSetup;
 import com.example.myweatherbase.base.ImageDownloader;
 import com.example.myweatherbase.base.Parameters;
@@ -33,6 +34,7 @@ public class DetailsActivity extends AppCompatActivity {
         setContentView(R.layout.activity_details);
 
         ThemeSetup.applyPreferenceTheme(getApplicationContext());
+        IdiomSetUp.applyPreferenceIdiom(getApplicationContext());
 
         clima = findViewById(R.id.clima);
         buttonReturn = findViewById(R.id.buttonReturn);

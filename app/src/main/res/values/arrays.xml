@@ -30,8 +30,8 @@
     </string-array>
 
     <string-array name="idiom_values">
-        <item>espanyol</item>
-        <item>ingles</item>
-        <item>italiano</item>
+        <item>ESPANYOL</item>
+        <item>INGLES</item>
+        <item>ITALIANO</item>
     </string-array>
 </resources>
