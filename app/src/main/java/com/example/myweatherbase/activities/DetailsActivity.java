@@ -1,12 +1,14 @@
 package com.example.myweatherbase.activities;
 
 import android.os.Bundle;
+import android.view.Menu;
 import android.widget.ImageView;
 import android.widget.TextView;
 
 import androidx.appcompat.app.AppCompatActivity;
 import com.example.myweatherbase.R;
 import com.example.myweatherbase.activities.model.Root;
+import com.example.myweatherbase.activities.preferencias.ThemeSetup;
 import com.example.myweatherbase.base.ImageDownloader;
 import com.example.myweatherbase.base.Parameters;
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
@@ -29,6 +31,8 @@ public class DetailsActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_details);
+
+        ThemeSetup.applyPreferenceTheme(getApplicationContext());
 
         clima = findViewById(R.id.clima);
         buttonReturn = findViewById(R.id.buttonReturn);
@@ -58,5 +62,11 @@ public class DetailsActivity extends AppCompatActivity {
         rafagas.setText((int)root.list.get(position).wind.gust + " km/h");
 
         buttonReturn.setOnClickListener(view -> finish());
+    }
+
+    @Override
+    public boolean onCreateOptionsMenu(Menu menu) {
+        getMenuInflater().inflate(R.menu.menu, menu);
+        return super.onCreateOptionsMenu(menu);
     }
 }

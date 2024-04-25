@@ -2,6 +2,8 @@ package com.example.myweatherbase.activities;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.view.Menu;
+import android.view.MenuItem;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.Button;
@@ -10,6 +12,8 @@ import android.widget.Spinner;
 
 import androidx.appcompat.app.AppCompatActivity;
 import com.example.myweatherbase.R;
+import com.example.myweatherbase.activities.preferencias.PreferenciasActivity;
+import com.example.myweatherbase.activities.preferencias.ThemeSetup;
 
 public class InitialActivity extends AppCompatActivity {
     private ImageView imagenCiudades;
@@ -23,6 +27,8 @@ public class InitialActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_initial);
+
+        ThemeSetup.applyPreferenceTheme(getApplicationContext());
 
         imagenCiudades = findViewById(R.id.imageCiudad);
         spinnerCiudades = findViewById(R.id.spinnerCiudades);
@@ -69,4 +75,27 @@ public class InitialActivity extends AppCompatActivity {
             startActivity(intent);
         });
     }
+
+    @Override
+    public boolean onCreateOptionsMenu(Menu menu) {
+        getMenuInflater().inflate(R.menu.menu, menu);
+        return super.onCreateOptionsMenu(menu);
+    }
+
+
+    @Override
+    public boolean onOptionsItemSelected(MenuItem item) {
+        switch (item.getItemId()) {
+            case (R.id.configuracion):
+                Intent intentPreferenciasActivity = new Intent(this, PreferenciasActivity.class);
+                startActivity(intentPreferenciasActivity);
+                return true;
+            case (R.id.exit):
+                finish();
+            default:
+                return super.onOptionsItemSelected(item);
+        }
+    }
+
+
 }
