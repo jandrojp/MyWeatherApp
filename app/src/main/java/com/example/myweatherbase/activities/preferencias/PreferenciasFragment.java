@@ -34,14 +34,24 @@ public class PreferenciasFragment extends PreferenceFragmentCompat {
 
 
 
-        ListPreference idiomPreference = getPreferenceManager().findPreference(getString(R.string.settings_idiom_key));
+        ListPreference idiomPreference = getPreferenceManager().findPreference("lenguaje");
+        final List<String> idiom_entries = Arrays.asList(getResources().getStringArray(R.array.idiom_entries));
+        final List<String> idiom_values = Arrays.asList(getResources().getStringArray(R.array.idiom_values));
+        int position  = idiom_values.indexOf(GestionPreferencias.getInstance().getIdiom(getContext()));
+
         if (idiomPreference.getValue() == null) {
             idiomPreference.setValue(IdiomSetUp.Idiom.ESPANYOL.name());
         }
-        idiomPreference.setOnPreferenceChangeListener(((preference, newValue) -> {
-            IdiomSetUp.applyIdiom(IdiomSetUp.Idiom.valueOf((String) newValue));
+
+        idiomPreference.setSummary(idiom_entries.get(position));
+        idiomPreference.setOnPreferenceChangeListener((preference, newValue) -> {
+
+            int pos1 = idiom_values.indexOf(newValue);
+            idiomPreference.setSummary(idiom_entries.get(pos1));
+
             return true;
-        }));
+        });
+
 
 
 
