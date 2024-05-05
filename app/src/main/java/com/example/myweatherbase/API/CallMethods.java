@@ -32,6 +32,7 @@ public class CallMethods<T>  {
         return null;
     }
 
+
     public String post(String url, RequestBody data){
         Call<ResponseBody> call = service.postCall(url, data);
         try {

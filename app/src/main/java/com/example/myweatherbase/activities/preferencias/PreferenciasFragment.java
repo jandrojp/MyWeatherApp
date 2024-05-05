@@ -1,7 +1,12 @@
 package com.example.myweatherbase.activities.preferencias;
 
 import android.os.Bundle;
+import android.widget.Toast;
+
+import androidx.annotation.NonNull;
+import androidx.preference.EditTextPreference;
 import androidx.preference.ListPreference;
+import androidx.preference.Preference;
 import androidx.preference.PreferenceFragmentCompat;
 import com.example.myweatherbase.R;
 import java.util.Arrays;
@@ -64,5 +69,14 @@ public class PreferenciasFragment extends PreferenceFragmentCompat {
             ThemeSetup.applyTheme(ThemeSetup.Mode.valueOf((String) newValue));
             return true;
         });
+
+        // EditTextPreference
+        final EditTextPreference api1 = findPreference("api");
+
+        api1.setOnPreferenceChangeListener((preference, newValue) -> {
+
+            return true;
+        });
+
     }
 }
